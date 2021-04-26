@@ -1,0 +1,57 @@
+body{
+    padding: 5%;
+    width:100%;
+   background-color: #1a1a2e;
+    
+}
+
+h1, h6, h4 {
+    margin: 20px;
+    font-family: 'Squada One', cursive;
+}
+
+
+
+h1, h6, h4, p, h5, label{
+    color: whitesmoke;
+    
+}
+
+#movies{
+    flex-direction: row;
+    flex-wrap: wrap; 
+}
+
+
+#fist{
+    height: 80vh;
+}
+
+
+
+.tags{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+span{
+    margin: 2px;
+}
+
+.card{
+    margin: 10px;
+    background: rgba( 255, 255, 255, 0.20 );
+box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+backdrop-filter: blur( 1.0px );
+-webkit-backdrop-filter: blur( 1.0px );
+border-radius: 10px;
+
+}
+
+.modal-content{
+    background: rgba( 26, 26, 46, 0.50 );
+    box-shadow: 0 8px 32px 0 rgba(19, 19, 19, 0.1);
+    backdrop-filter: blur( 10.0px );
+    -webkit-backdrop-filter: blur( 10.0px );
+    border-radius: 10px;
+}

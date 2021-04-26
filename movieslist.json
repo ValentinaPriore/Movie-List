@@ -1,0 +1,34 @@
+[
+    { 
+        "name":"Wandavision",
+        "categorie":["serie","ficción"],
+        "vista": true
+    },
+
+    {
+        "name":"Attack on Titan",
+        "categorie":["serie","ánime"],
+        "vista":false
+    },
+
+
+    {
+        "name":"Kingsman",
+        "categorie":["película"],
+        "vista":false
+    },
+
+    {
+        "name":"Matix I",
+        "categorie":["serie","Ciencia Ficción"],
+        "vista":false
+    },
+
+    {
+        "name":"Matix II",
+        "categorie":["serie","Ciencia Ficción"],
+        "vista":false
+    }
+
+    
+]
