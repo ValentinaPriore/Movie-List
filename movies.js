@@ -58,7 +58,8 @@ document.addEventListener("DOMContentLoaded", function(e){
      
             
                document.getElementById("random").innerHTML = `<div class="card-body">
-                     
+               <div class="card-header">       
+
                <h5  class="card-title"> <i class="em em-popcorn" aria-role="presentation" aria-label="POPCORN"></i> `+ movie[random].name +`</h5>
                <div class="tags"></div>
             
@@ -86,73 +87,74 @@ document.addEventListener("DOMContentLoaded", function(e){
             let contenido2 = " "
              
               for (let i = 0; i < movie.length; i++) {
-                
-                if(movie[i].vista == false){
-                let boton =" "
-  
-                for (let a = 0; a < movie[i].categorie.length; a++) {
-                  boton += `<span class="btn btn-primary btn-sm">`+ movie[i].categorie[a] +`</span>`
-                }
-  
-                      
-                  contenido += `<div class="card col-3">
-                  <div class="card-body">
-                      
-          
-                      <h5  class="card-title"> <i class="em em-popcorn" aria-role="presentation" aria-label="POPCORN"></i> `+ movie[i].name +`</h5>
-                      <div class="tags">
-                      `+ boton +`
-                        
-                      </div>
-          
-                      <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-                        <label class="form-check-label" for="defaultCheck1">
-                          Marcar como vista
-                        </label>
-                      </div>
-          
-          
-                  </div>
-                </div>`
-  
-  
-              }
+                if(movie[i] != null){
 
-              else{
-                let boton =" "
-  
-                for (let a = 0; a < movie[i].categorie.length; a++) {
-                  boton += `<span class="btn btn-primary btn-sm">`+ movie[i].categorie[a] +`</span>`
+                
+                  if(movie[i].vista == false){
+                  let boton =" "
+    
+                  for (let a = 0; a < movie[i].categorie.length; a++) {
+                    boton += `<span class="btn btn-primary btn-sm">`+ movie[i].categorie[a] +`</span>`
+                  }
+    
+                        
+                    contenido += `<div class="card col-3">
+                    <div class="card-body">
+                    <div> <button class="btn btn-primary" onclick="removeMovie(`+i+`)"> X</button></div> 
+                        <h5  class="card-title"> <i class="em em-popcorn" aria-role="presentation" aria-label="POPCORN"></i> `+ movie[i].name +`</h5>
+                        <div class="tags">
+                        `+ boton +`
+                          
+                        </div>
+            
+                        <div class="form-check">
+                          <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                          <label class="form-check-label" for="defaultCheck1">
+                            Marcar como vista
+                          </label>
+                        </div>
+            
+            
+                    </div>
+                  </div>`
+    
+    
+                }
+
+                else{
+                  let boton =" "
+    
+                  for (let a = 0; a < movie[i].categorie.length; a++) {
+                    boton += `<span class="btn btn-primary btn-sm">`+ movie[i].categorie[a] +`</span>`
+                  }
+    
+                        
+                    contenido2 += `<div class="card col-3">
+                    <div class="card-body">
+                        
+            
+                        <h5  class="card-title"> <i class="em em-popcorn" aria-role="presentation" aria-label="POPCORN"></i> `+ movie[i].name +`</h5>
+                        <div class="tags">
+                        `+ boton +`
+                          
+                        </div>
+            
+                        <div class="form-check">
+                          <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                          <label class="form-check-label" for="defaultCheck1">
+                            Marcar como vista
+                          </label>
+                        </div>
+            
+            
+                    </div>
+                  </div>`
+                
                 }
   
-                      
-                  contenido2 += `<div class="card col-3">
-                  <div class="card-body">
-                      
-          
-                      <h5  class="card-title"> <i class="em em-popcorn" aria-role="presentation" aria-label="POPCORN"></i> `+ movie[i].name +`</h5>
-                      <div class="tags">
-                      `+ boton +`
-                        
-                      </div>
-          
-                      <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-                        <label class="form-check-label" for="defaultCheck1">
-                          Marcar como vista
-                        </label>
-                      </div>
-          
-          
-                  </div>
-                </div>`
-              
-              }
- 
 
              }
-            
+            }
            
 
             movieBox.innerHTML = contenido 
@@ -240,6 +242,12 @@ function newMovie(){
   UPDATEMOVIES_JSON();
 
 
+}
+
+function removeMovie(a){
+  delete MOVIES_JSON[a];
+  
+  UPDATEMOVIES_JSON();
 }
 
 
