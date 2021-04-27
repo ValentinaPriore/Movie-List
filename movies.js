@@ -141,7 +141,7 @@ document.addEventListener("DOMContentLoaded", function(e){
                         </div>
             
                         <div class="form-check">
-                          <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                          <input onclick="removenoMovie(`+i+`)" class="form-check-input" type="checkbox" value="" id="defaultCheck1">
                           <label class="form-check-label" for="defaultCheck1">
                             Marcar no como vista
                           </label>
@@ -257,4 +257,9 @@ function movieVista(a){
 
 }
 
+function movienoVista(a){
+  MOVIES_JSON[a].vista = false;
+  UPDATEMOVIES_JSON();
+
+}
 
