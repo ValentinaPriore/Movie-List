@@ -2,6 +2,7 @@
 var MOVIES_JSONURL = "https://api.jsonbin.io/b/6085ed09f6655022c46bb5ea"
 var MOVIES_JSON;
 var rfunc
+
 const UPDATEMOVIES_JSON = function(){
   let req = new XMLHttpRequest();
 
@@ -108,7 +109,7 @@ document.addEventListener("DOMContentLoaded", function(e){
                         </div>
             
                         <div class="form-check">
-                          <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                          <input onclick="movieVista(`+i+`)" class="form-check-input" type="checkbox" value="" id="defaultCheck1">
                           <label class="form-check-label" for="defaultCheck1">
                             Marcar como vista
                           </label>
@@ -142,7 +143,7 @@ document.addEventListener("DOMContentLoaded", function(e){
                         <div class="form-check">
                           <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
                           <label class="form-check-label" for="defaultCheck1">
-                            Marcar como vista
+                            Marcar no como vista
                           </label>
                         </div>
             
@@ -248,6 +249,12 @@ function removeMovie(a){
   delete MOVIES_JSON[a];
   
   UPDATEMOVIES_JSON();
+}
+
+function movieVista(a){
+  MOVIES_JSON[a].vista = true;
+  UPDATEMOVIES_JSON();
+
 }
 
 
